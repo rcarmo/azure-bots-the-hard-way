@@ -1,0 +1,26 @@
+{
+  "name": "bot",
+  "version": "1.0.0",
+  "description": "Bot Framework Blueprint",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rcarmo/azure-functions-bot"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "Rui Carmo",
+  "engines": {
+    "node": "8.4.0",
+    "npm": "3.3.0"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "botbuilder": "^3.9.1",
+    "botbuilder-azure": "^3.0.2",
+    "restify": "^5.2.0"
+  },
+  "devDependencies": {}
+}
