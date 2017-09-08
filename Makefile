@@ -23,9 +23,11 @@ view-provisioning:
 deprovision:
 	az group delete --name $(RESOURCE_GROUP) --no-wait
 
+# Local testing
 serve:
-	cd bot; node index.js
+	node app.js
 
+# Push to App Service
 deploy:
 	git push azure master
 

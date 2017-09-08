@@ -23,10 +23,9 @@ Grab `bash`, check out the `Makefile` and you'll be all set.
 * [x] Deploy Azure App Service
 * [x] Deploy Storage Account for queues (already part of webjob requirements)
 * [x] Configure App Service deployment settings
-* [x] Deploy Redis
 * [x] Retrieve/Set App Service local Git credentials and deployment remote programmatically
 * [x] Simple static server inside Functions app
-* [ ] Simple bot back-end
+* [x] Simple bot back-end
 * [ ] Simple web front-end for anonymous chats
 * [ ] Bot registration
 * [ ] Provision default queues and tables
