@@ -7,7 +7,7 @@ fs.writeFileSync("parameters.json", JSON.stringify({
     redisServerName: {
         value: SOLUTION_NAME 
     },
-    functionAppName: {
+    botAppName: {
         value: SOLUTION_NAME
     },
     storagePrefix: {

@@ -20,7 +20,7 @@ view-provisioning:
 	--query "[].{OperationID:operationId,Name:properties.targetResource.resourceName,Type:properties.targetResource.resourceType,State:properties.provisioningState,Status:properties.statusCode}" --output table
 
 # Destroy solution
-delete:
+deprovision:
 	az group delete --name $(RESOURCE_GROUP) --no-wait
 
 serve:

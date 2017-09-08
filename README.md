@@ -5,7 +5,6 @@ This template deploys:
 * An Azure Web App (Consumption/on-demand plan) with:
   * A supporting storage account (for WebJob storage and your own queues)
   * An Application Insights account
-* A Redis instance (C0) for managing live state
 * A simple bot that echoes back replies
 
 ## Usage

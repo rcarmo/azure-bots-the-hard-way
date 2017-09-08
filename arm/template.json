@@ -16,29 +16,10 @@
         }
     },
     "variables": {
-        "storageAccountName": "[concat(parameters('storagePrefix'), uniqueString(resourceGroup().id))]",
+        "storageAccountName": "[substring(concat(parameters('storagePrefix'), uniqueString(resourceGroup().id)),0,24)]",
         "storageAccountid": "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]"
     },
     "resources": [
-        {
-            "comments": "Live app state",
-            "type": "Microsoft.Cache/Redis",
-            "name": "[parameters('redisServerName')]",
-            "apiVersion": "2016-04-01",
-            "location": "[resourceGroup().location]",
-            "tags": {},
-            "scale": null,
-            "properties": {
-                "redisVersion": "3.2.7",
-                "sku": {
-                    "name": "Basic",
-                    "family": "C",
-                    "capacity": 0
-                },
-                "enableNonSslPort": false
-            },
-            "dependsOn": []
-        },
         {
             "comments": "Application Insights - named after Bot App (note link to resource in tags)",
             "type": "Microsoft.Insights/components",
@@ -76,10 +57,10 @@
             "comments": "Consumption App Service Plan",
             "type": "Microsoft.Web/serverfarms",
             "sku": {
-                "name": "Y1",
-                "tier": "Dynamic",
-                "size": "Y1",
-                "family": "Y",
+                "name": "F1",
+                "tier": "Free",
+                "size": "F1",
+                "family": "F",
                 "capacity": 0
             },
             "name": "[parameters('botAppName')]",
@@ -151,7 +132,7 @@
                         },
                         {
                             "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
-                            "value":  "[reference(resourceId('Microsoft.Insights/components', parameters('botAppName')), '2014-04-01').InstrumentationKey]"
+                            "value": "[reference(resourceId('Microsoft.Insights/components', parameters('botAppName')), '2014-04-01').InstrumentationKey]"
                         }
                     ]
                 }
