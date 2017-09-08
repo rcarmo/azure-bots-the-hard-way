@@ -2,8 +2,8 @@
 
 var builder = require('botbuilder');
 var connector = new builder.ChatConnector({
-    appId: process.env.CHAT_CONNECTOR_APP_ID,
-    appPassword: process.env.CHAT_CONNECTOR_APP_PASSWORD
+    appId: process.env.MICROSOFT_APP_ID,
+    appPassword: process.env.MICROSOFT_APP_PASSWORD
 });
 var listener = connector.listen();
 var bot = new builder.UniversalBot(connector, { persistConversationData: true });
