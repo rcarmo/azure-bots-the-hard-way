@@ -54,7 +54,7 @@
             "dependsOn": []
         },
         {
-            "comments": "Consumption App Service Plan",
+            "comments": "Free App Service Plan",
             "type": "Microsoft.Web/serverfarms",
             "sku": {
                 "name": "F1",
@@ -119,18 +119,6 @@
                             "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2015-05-01-preview').key1)]"
                         },
                         {
-                            "name": "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING",
-                            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2015-05-01-preview').key1)]"
-                        },
-                        {
-                            "name": "WEBSITE_CONTENTSHARE",
-                            "value": "[toLower(parameters('botAppName'))]"
-                        },
-                        {
-                            "name": "WEBSITE_NODE_DEFAULT_VERSION",
-                            "value": "8.4.0"
-                        },
-                        {
                             "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
                             "value": "[reference(resourceId('Microsoft.Insights/components', parameters('botAppName')), '2014-04-01').InstrumentationKey]"
                         }
@@ -161,9 +149,6 @@
                     "index.php",
                     "hostingstart.html"
                 ],
-                "nodeVersion": "8.4.0",
-                "httpLoggingEnabled": true,
-                "logsDirectorySizeLimit": 35,
                 "scmType": "LocalGit"
             },
             "dependsOn": [
