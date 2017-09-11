@@ -2,7 +2,7 @@
 
 This template deploys:
 
-* An Azure Web App (Consumption/on-demand plan) with:
+* An Azure Web App (Basic plan) with:
   * A supporting storage account (for WebJob storage and your own queues)
   * An Application Insights account
 * A simple bot that echoes back replies
